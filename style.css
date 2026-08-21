@@ -1,0 +1,417 @@
+/* ==========================================
+   Aiman Birthday Puzzle
+   Royal Birthday Theme
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #3a1021 0%,
+            #16060d 55%,
+            #080204 100%
+        );
+
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   WELCOME SCREEN
+========================================== */
+
+.welcome-screen {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 35px 22px;
+}
+
+.heart {
+    font-size: 55px;
+    color: #ff4f79;
+
+    margin-bottom: 20px;
+
+    filter:
+        drop-shadow(
+            0 0 15px
+            rgba(255, 79, 121, 0.35)
+        );
+
+    animation:
+        heartbeat 1.5s infinite;
+}
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 4px;
+
+    color: #e7bb72;
+
+    margin-bottom: 15px;
+}
+
+.welcome-screen h1 {
+    font-size: clamp(48px, 13vw, 68px);
+
+    font-weight: normal;
+
+    color: #ffd998;
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 5px 25px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+/* Birthday Date */
+
+.birthday-date {
+    padding: 10px 24px;
+
+    border:
+        1px solid
+        rgba(255, 217, 152, 0.45);
+
+    border-radius: 50px;
+
+    font-size: 17px;
+
+    color: #fff2dd;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    margin-bottom: 42px;
+}
+
+
+/* 30 Pictures Section */
+
+.journey-count {
+    font-size: 23px;
+
+    line-height: 1.65;
+
+    color: #fff2dd;
+}
+
+.journey-count p {
+    margin: 1px 0;
+}
+
+
+/* Gold Divider */
+
+.divider {
+    margin: 28px 0;
+
+    color: #d6a557;
+
+    letter-spacing: 9px;
+
+    font-size: 18px;
+}
+
+
+/* Memory Text */
+
+.journey-text {
+    max-width: 350px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    font-style: italic;
+
+    color: #d9c8cb;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==========================================
+   START BUTTON
+========================================== */
+
+.start-button {
+    width: min(100%, 370px);
+
+    border: none;
+
+    padding: 17px 28px;
+
+    border-radius: 60px;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: #2b0b13;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffdc96,
+            #d79b40
+        );
+
+    box-shadow:
+        0 12px 35px
+        rgba(215, 155, 64, 0.22);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.start-button span {
+    color: #ae244c;
+
+    margin-left: 7px;
+}
+
+.start-button:active {
+    transform: scale(0.96);
+
+    box-shadow:
+        0 6px 20px
+        rgba(215, 155, 64, 0.18);
+}
+
+
+/* Made By */
+
+.made-with {
+    margin-top: 35px;
+
+    font-size: 13px;
+
+    color: #776269;
+}
+
+
+/* ==========================================
+   GAME SCREEN
+========================================== */
+
+.game-screen {
+    min-height: 100vh;
+
+    padding: 35px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* Header */
+
+.game-header {
+    margin-bottom: 5px;
+}
+
+.game-small-title {
+    color: #d2aa64;
+
+    letter-spacing: 3px;
+
+    font-size: 11px;
+}
+
+.game-header h2 {
+    font-size: 42px;
+
+    font-weight: normal;
+
+    color: #ffdc99;
+
+    margin-top: 8px;
+}
+
+.level-progress {
+    margin-top: 7px;
+
+    font-size: 13px;
+
+    color: #9f858c;
+}
+
+
+/* ==========================================
+   TEMPORARY PUZZLE BOX
+========================================== */
+
+.puzzle-placeholder {
+    width: min(90vw, 390px);
+
+    min-height: 420px;
+
+    margin: 28px auto;
+
+    border-radius: 26px;
+
+    border:
+        1px solid
+        rgba(255, 218, 150, 0.25);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.065),
+            rgba(255, 255, 255, 0.018)
+        );
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    box-shadow:
+        0 18px 55px
+        rgba(0, 0, 0, 0.4);
+}
+
+.puzzle-icon {
+    font-size: 70px;
+
+    margin-bottom: 18px;
+}
+
+.puzzle-placeholder h3 {
+    font-size: 25px;
+
+    font-weight: normal;
+
+    color: #ffda96;
+
+    margin-bottom: 10px;
+}
+
+.puzzle-placeholder p {
+    color: #ae989e;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   SECONDARY BUTTON
+========================================== */
+
+.secondary-button {
+    padding: 12px 27px;
+
+    border-radius: 30px;
+
+    border:
+        1px solid
+        #bd8b47;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+
+    color: #e7c78c;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   UTILITY
+========================================== */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.08);
+    }
+
+    50% {
+        transform: scale(1.16);
+    }
+
+    75% {
+        transform: scale(1.08);
+    }
+}
+
+
+/* ==========================================
+   SMALL MOBILE SCREENS
+========================================== */
+
+@media (max-width: 380px) {
+
+    .welcome-screen {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .welcome-screen h1 {
+        font-size: 47px;
+    }
+
+    .journey-count {
+        font-size: 21px;
+    }
+
+    .journey-text {
+        font-size: 16px;
+    }
+
+      }
