@@ -415,3 +415,385 @@ body {
     }
 
       }
+
+/* ==========================================
+   LEVEL 1 - PHOTO PREVIEW
+========================================== */
+
+.preview-card {
+    width: min(92vw, 390px);
+    margin: 26px auto;
+    padding: 16px;
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border:
+        1px solid
+        rgba(255, 218, 150, 0.22);
+
+    box-shadow:
+        0 18px 55px
+        rgba(0, 0, 0, 0.42);
+}
+
+
+.preview-label {
+    color: #f2cf8a;
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+
+.preview-image {
+    width: 100%;
+    max-height: 520px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+.preview-hint {
+    margin-top: 14px;
+
+    color: #bca8ad;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   PUZZLE AREA
+========================================== */
+
+.puzzle-area {
+    width: min(94vw, 420px);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+
+.game-stats {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 16px;
+}
+
+
+.stat-box {
+    padding: 12px 14px;
+
+    border-radius: 18px;
+
+    border:
+        1px solid
+        rgba(255, 218, 150, 0.18);
+
+    background:
+        rgba(255, 255, 255, 0.045);
+}
+
+
+.stat-box span {
+    display: block;
+
+    color: #9d858b;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 5px;
+}
+
+
+.stat-box strong {
+    color: #ffdc9b;
+
+    font-size: 20px;
+}
+
+
+/* ==========================================
+   3x3 PUZZLE BOARD
+========================================== */
+
+.puzzle-board {
+    width: min(92vw, 390px);
+
+    aspect-ratio: 3 / 4.6;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    grid-template-rows:
+        repeat(3, 1fr);
+
+    gap: 3px;
+
+    padding: 3px;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 215, 140, 0.18);
+
+    border:
+        1px solid
+        rgba(255, 218, 150, 0.26);
+
+    box-shadow:
+        0 18px 55px
+        rgba(0, 0, 0, 0.45);
+}
+
+
+.puzzle-piece {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 7px;
+
+    background-image:
+        url("assets/photos/level1.jpg");
+
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+
+.puzzle-piece:active {
+    transform: scale(0.96);
+}
+
+
+.puzzle-piece.selected {
+    z-index: 5;
+
+    outline:
+        3px solid
+        #ffd478;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(255, 212, 120, 0.18),
+        0 0 25px
+        rgba(255, 184, 78, 0.6);
+
+    transform: scale(0.95);
+}
+
+
+.puzzle-instruction {
+    margin: 17px 10px 15px;
+
+    color: #bba5aa;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   SOLVED CARD
+========================================== */
+
+.solved-card {
+    width: min(92vw, 400px);
+
+    margin: 26px auto;
+
+    padding: 22px 18px 26px;
+
+    border-radius: 28px;
+
+    border:
+        1px solid
+        rgba(255, 218, 150, 0.28);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.075),
+            rgba(255, 255, 255, 0.022)
+        );
+
+    box-shadow:
+        0 18px 60px
+        rgba(0, 0, 0, 0.48);
+}
+
+
+.solved-heart {
+    font-size: 48px;
+
+    margin-bottom: 8px;
+
+    animation:
+        heartbeat 1.4s infinite;
+}
+
+
+.solved-small {
+    color: #d5a85b;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+
+.solved-card h3 {
+    margin-top: 8px;
+
+    margin-bottom: 18px;
+
+    color: #ffdc98;
+
+    font-size: 33px;
+
+    font-weight: normal;
+}
+
+
+.solved-image {
+    width: 100%;
+
+    max-height: 520px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 38px
+        rgba(0, 0, 0, 0.4);
+}
+
+
+.solved-message {
+    margin-top: 20px;
+
+    color: #dac6ca;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+    font-style: italic;
+}
+
+
+.moves-result {
+    margin: 18px auto;
+
+    color: #bfa9ad;
+
+    font-size: 14px;
+}
+
+
+.moves-result strong {
+    color: #ffd992;
+
+    font-size: 20px;
+}
+
+
+.next-level-button {
+    margin-top: 4px;
+}
+
+
+/* ==========================================
+   BACK BUTTON
+========================================== */
+
+.back-button {
+    margin-top: 25px;
+
+    padding: 10px 18px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #8f777e;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   MOBILE POLISH
+========================================== */
+
+@media (max-width: 420px) {
+
+    .game-screen {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .puzzle-board {
+        width: 94vw;
+    }
+
+    .preview-card,
+    .solved-card {
+        width: 94vw;
+    }
+
+}
