@@ -111,28 +111,141 @@
         </div>
 
 
-        <div class="puzzle-placeholder">
+        <!-- ==============================
+             PHOTO PREVIEW
+        =============================== -->
 
-            <span class="puzzle-icon">
-                🧩
-            </span>
+        <div
+            id="previewCard"
+            class="preview-card"
+        >
+
+            <p class="preview-label">
+                Remember this picture... ❤️
+            </p>
+
+            <img
+                src="assets/photos/level1.jpg"
+                alt="Level 1 Memory"
+                class="preview-image"
+            >
+
+            <p class="preview-hint">
+                Look carefully — the puzzle begins in a moment.
+            </p>
+
+        </div>
+
+
+        <!-- ==============================
+             PUZZLE AREA
+        =============================== -->
+
+        <div
+            id="puzzleArea"
+            class="puzzle-area hidden"
+        >
+
+            <div class="game-stats">
+
+                <div class="stat-box">
+                    <span>Moves</span>
+                    <strong id="movesCount">
+                        0
+                    </strong>
+                </div>
+
+                <div class="stat-box">
+                    <span>Pieces</span>
+                    <strong>
+                        3 × 3
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div
+                id="puzzleBoard"
+                class="puzzle-board"
+            >
+            </div>
+
+
+            <p
+                id="puzzleInstruction"
+                class="puzzle-instruction"
+            >
+                Tap one piece, then tap another to swap them.
+            </p>
+
+
+            <button
+                id="shuffleButton"
+                class="secondary-button"
+            >
+                🔀 Shuffle Again
+            </button>
+
+        </div>
+
+
+        <!-- ==============================
+             SOLVED SCREEN
+        =============================== -->
+
+        <div
+            id="solvedCard"
+            class="solved-card hidden"
+        >
+
+            <div class="solved-heart">
+                ❤️
+            </div>
+
+            <p class="solved-small">
+                MEMORY UNLOCKED
+            </p>
 
             <h3>
-                Our First Memory
+                You Solved It!
             </h3>
 
-            <p>
-                Your first puzzle is waiting...
+            <img
+                src="assets/photos/level1.jpg"
+                alt="Completed Level 1 Memory"
+                class="solved-image"
+            >
+
+            <p class="solved-message">
+                Some pictures are more than pictures...
+                <br>
+                they quietly hold a little piece of time.
             </p>
+
+            <div class="moves-result">
+                Completed in
+                <strong id="finalMoves">
+                    0
+                </strong>
+                moves ✨
+            </div>
+
+            <button
+                id="nextLevelButton"
+                class="start-button next-level-button"
+            >
+                Next Memory →
+            </button>
 
         </div>
 
 
         <button
             id="backButton"
-            class="secondary-button"
+            class="back-button"
         >
-            ← Back
+            ← Back To Beginning
         </button>
 
     </section>
