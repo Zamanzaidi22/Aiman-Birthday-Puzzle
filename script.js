@@ -128,6 +128,14 @@ const levels = [
 
     message:
         "Libaas ki khoobsurti apni jagah… magar saadgi jab chehre par utar aaye, to baat hi kuch aur hoti hai. ✨❤️"
+    },
+
+    {
+    image:
+        "assets/photos/level9.jpg",
+
+    message:
+        "Laal rang pehle bhi khoobsurat tha… par tumne pehna, to thoda zyada ho gaya. ❤️😄"
     }
 ];
 
