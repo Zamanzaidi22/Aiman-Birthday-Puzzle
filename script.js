@@ -88,8 +88,15 @@ const levels = [
 
         message:
             "Some smiles don't need a reason to be remembered... they simply become a reason to smile again. ❤️"
-    }
+    },
 
+    {
+    image:
+        "assets/photos/level4.jpg",
+
+    message:
+        "Pata nahi is tasveer mein kya khaas hai… bas jab bhi dekho, kuch pal ke liye nazar yahin ruk jaati hai. ❤️"
+    }
 ];
 
 // ==========================================
