@@ -152,6 +152,14 @@ const levels = [
 
     message:
         "Kuch chehre bas dekhe nahi jaate… dil unhe khamoshi se yaad rakh leta hai. ❤️"
+    },
+
+    {
+    image:
+        "assets/photos/level12.jpg",
+
+    message:
+        "Wrapped in grace, touched by light… some moments look almost like a dream. ✨"
     }
 ];
 
