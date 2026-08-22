@@ -136,6 +136,14 @@ const levels = [
 
     message:
         "Laal rang pehle bhi khoobsurat tha… par tumne pehna, to thoda zyada ho gaya. ❤️😄"
+    },
+
+    {
+    image:
+        "assets/photos/level10.jpg",
+
+    message:
+        "Some faces fade with passing years, but yours somehow grows brighter in memory. ❤️"
     }
 ];
 
