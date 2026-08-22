@@ -144,6 +144,14 @@ const levels = [
 
     message:
         "Some faces fade with passing years, but yours somehow grows brighter in memory. ❤️"
+    },
+
+    {
+    image:
+        "assets/photos/level11.jpg",
+
+    message:
+        "Kuch chehre bas dekhe nahi jaate… dil unhe khamoshi se yaad rakh leta hai. ❤️"
     }
 ];
 
