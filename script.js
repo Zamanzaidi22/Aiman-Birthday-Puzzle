@@ -104,6 +104,14 @@ const levels = [
 
     message:
         "Titli to filter wali hai… 🦋 par is tasveer ki masoomiyat bilkul asli hai. ❤️"
+    },
+
+    {
+    image:
+        "assets/photos/level6.jpg",
+
+    message:
+        "Saadgi bhi kitni khoobsurat ho sakti hai, ye tasveer har baar bata deti hai. 🤍✨"
     }
 ];
 
