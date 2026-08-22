@@ -160,6 +160,14 @@ const levels = [
 
     message:
         "Wrapped in grace, touched by light… some moments look almost like a dream. ✨"
+    },
+
+    {
+    image:
+        "assets/photos/level13.jpg",
+
+    message:
+        "Tum yun hi muskura diya karo… kuch lamhe bina wajah bhi khoobsurat hone chahiye. ❤️✨"
     }
 ];
 
