@@ -112,6 +112,14 @@ const levels = [
 
     message:
         "Saadgi bhi kitni khoobsurat ho sakti hai, ye tasveer har baar bata deti hai. 🤍✨"
+    },
+
+    {
+    image:
+        "assets/photos/level7.jpg",
+
+    message:
+        "Tab na duniya ki fikr thi, na waqt ka hisaab… bas ek chhoti si Aiman thi, aur uski masoom si duniya. 🥹❤️"
     }
 ];
 
