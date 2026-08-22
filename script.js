@@ -1,6 +1,11 @@
 // ==========================================
 // Aiman Birthday Puzzle
-// Level 1 Puzzle Engine
+// Multi-Level Puzzle Engine
+// ==========================================
+
+
+// ==========================================
+// ELEMENTS
 // ==========================================
 
 const welcomeScreen =
@@ -17,6 +22,9 @@ const backButton =
 
 const previewCard =
     document.getElementById("previewCard");
+
+const previewImage =
+    document.querySelector(".preview-image");
 
 const puzzleArea =
     document.getElementById("puzzleArea");
@@ -36,15 +44,54 @@ const shuffleButton =
 const solvedCard =
     document.getElementById("solvedCard");
 
+const solvedImage =
+    document.querySelector(".solved-image");
+
+const solvedMessage =
+    document.querySelector(".solved-message");
+
 const nextLevelButton =
     document.getElementById("nextLevelButton");
 
+const levelTitle =
+    document.getElementById("levelTitle");
+
+const levelProgress =
+    document.querySelector(".level-progress");
+
 
 // ==========================================
-// GAME SETTINGS
+// LEVEL DATA
+// ==========================================
+
+const levels = [
+
+    {
+        image:
+            "assets/photos/level1.jpg",
+
+        message:
+            "Some pictures are more than pictures... they quietly hold a little piece of time."
+    },
+
+    {
+        image:
+            "assets/photos/level2.jpg",
+
+        message:
+            "Some smiles don’t ask for attention... they simply make a moment feel softer."
+    }
+
+];
+
+
+// ==========================================
+// GAME VARIABLES
 // ==========================================
 
 const totalPieces = 9;
+
+let currentLevel = 0;
 
 let pieces = [];
 
@@ -63,42 +110,96 @@ startButton.addEventListener(
     "click",
     function () {
 
+        currentLevel = 0;
+
         welcomeScreen.classList.add("hidden");
 
         gameScreen.classList.remove("hidden");
 
-        previewCard.classList.remove("hidden");
-
-        puzzleArea.classList.add("hidden");
-
-        solvedCard.classList.add("hidden");
-
-        moves = 0;
-
-        movesCount.textContent = "0";
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-        setTimeout(
-            function () {
-
-                previewCard.classList.add("hidden");
-
-                puzzleArea.classList.remove("hidden");
-
-                createPuzzle();
-
-                gameStarted = true;
-
-            },
-            3000
-        );
+        loadLevel();
 
     }
 );
+
+
+// ==========================================
+// LOAD LEVEL
+// ==========================================
+
+function loadLevel() {
+
+    const level =
+        levels[currentLevel];
+
+
+    gameStarted = false;
+
+    selectedIndex = null;
+
+    moves = 0;
+
+    movesCount.textContent = "0";
+
+
+    levelTitle.textContent =
+        `Level ${currentLevel + 1}`;
+
+
+    levelProgress.textContent =
+        `Memory ${currentLevel + 1} of 30`;
+
+
+    previewImage.src =
+        level.image;
+
+
+    solvedImage.src =
+        level.image;
+
+
+    solvedMessage.textContent =
+        level.message;
+
+
+    previewCard.classList.remove(
+        "hidden"
+    );
+
+    puzzleArea.classList.add(
+        "hidden"
+    );
+
+    solvedCard.classList.add(
+        "hidden"
+    );
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+
+    setTimeout(
+        function () {
+
+            previewCard.classList.add(
+                "hidden"
+            );
+
+            puzzleArea.classList.remove(
+                "hidden"
+            );
+
+            createPuzzle();
+
+            gameStarted = true;
+
+        },
+        3000
+    );
+
+}
 
 
 // ==========================================
@@ -117,6 +218,7 @@ function createPuzzle() {
 
     puzzleBoard.innerHTML = "";
 
+
     for (
         let i = 0;
         i < totalPieces;
@@ -126,6 +228,7 @@ function createPuzzle() {
         pieces.push(i);
 
     }
+
 
     shufflePieces();
 
@@ -150,8 +253,10 @@ function shufflePieces() {
 
             const randomIndex =
                 Math.floor(
-                    Math.random() * (i + 1)
+                    Math.random()
+                    * (i + 1)
                 );
+
 
             [
                 pieces[i],
@@ -176,18 +281,25 @@ function renderPuzzle() {
 
     puzzleBoard.innerHTML = "";
 
+    const level =
+        levels[currentLevel];
+
+
     pieces.forEach(
-        function (pieceNumber, index) {
+        function (
+            pieceNumber,
+            index
+        ) {
 
             const piece =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
-            piece.classList.add("puzzle-piece");
 
-            piece.dataset.index = index;
-
-            piece.dataset.piece =
-                pieceNumber;
+            piece.classList.add(
+                "puzzle-piece"
+            );
 
 
             const row =
@@ -195,18 +307,27 @@ function renderPuzzle() {
                     pieceNumber / 3
                 );
 
+
             const column =
                 pieceNumber % 3;
+
+
+            piece.style.backgroundImage =
+                `url("${level.image}")`;
 
 
             piece.style.backgroundSize =
                 "300% 300%";
 
+
             piece.style.backgroundPosition =
                 `${column * 50}% ${row * 50}%`;
 
 
-            if (selectedIndex === index) {
+            if (
+                selectedIndex
+                === index
+            ) {
 
                 piece.classList.add(
                     "selected"
@@ -219,13 +340,17 @@ function renderPuzzle() {
                 "click",
                 function () {
 
-                    handlePieceClick(index);
+                    handlePieceClick(
+                        index
+                    );
 
                 }
             );
 
 
-            puzzleBoard.appendChild(piece);
+            puzzleBoard.appendChild(
+                piece
+            );
 
         }
     );
@@ -234,7 +359,7 @@ function renderPuzzle() {
 
 
 // ==========================================
-// PIECE CLICK
+// HANDLE PIECE TAP
 // ==========================================
 
 function handlePieceClick(index) {
@@ -255,7 +380,10 @@ function handlePieceClick(index) {
     }
 
 
-    if (selectedIndex === index) {
+    if (
+        selectedIndex
+        === index
+    ) {
 
         selectedIndex = null;
 
@@ -279,7 +407,9 @@ function handlePieceClick(index) {
 
     moves++;
 
-    movesCount.textContent = moves;
+    movesCount.textContent =
+        moves;
+
 
     renderPuzzle();
 
@@ -297,15 +427,20 @@ function handlePieceClick(index) {
 
 
 // ==========================================
-// CHECK IF SOLVED
+// CHECK SOLVED
 // ==========================================
 
 function isSolved() {
 
     return pieces.every(
-        function (piece, index) {
+        function (
+            piece,
+            index
+        ) {
 
-            return piece === index;
+            return (
+                piece === index
+            );
 
         }
     );
@@ -314,7 +449,7 @@ function isSolved() {
 
 
 // ==========================================
-// SHUFFLE BUTTON
+// SHUFFLE AGAIN
 // ==========================================
 
 shuffleButton.addEventListener(
@@ -325,7 +460,8 @@ shuffleButton.addEventListener(
 
         moves = 0;
 
-        movesCount.textContent = "0";
+        movesCount.textContent =
+            "0";
 
         shufflePieces();
 
@@ -343,11 +479,35 @@ function showSolvedScreen() {
 
     gameStarted = false;
 
-    puzzleArea.classList.add("hidden");
+    puzzleArea.classList.add(
+        "hidden"
+    );
 
-    solvedCard.classList.remove("hidden");
+    solvedCard.classList.remove(
+        "hidden"
+    );
 
-    finalMoves.textContent = moves;
+    finalMoves.textContent =
+        moves;
+
+
+    if (
+        currentLevel
+        === levels.length - 1
+    ) {
+
+        nextLevelButton.textContent =
+            "More Memories Coming ❤️";
+
+    }
+
+    else {
+
+        nextLevelButton.textContent =
+            "Next Memory →";
+
+    }
+
 
     window.scrollTo({
         top: 0,
@@ -365,9 +525,24 @@ nextLevelButton.addEventListener(
     "click",
     function () {
 
-        alert(
-            "Level 2 coming next ❤️"
-        );
+        if (
+            currentLevel
+            < levels.length - 1
+        ) {
+
+            currentLevel++;
+
+            loadLevel();
+
+        }
+
+        else {
+
+            alert(
+                "More memories are coming soon ❤️"
+            );
+
+        }
 
     }
 );
@@ -385,15 +560,14 @@ backButton.addEventListener(
 
         selectedIndex = null;
 
-        gameScreen.classList.add("hidden");
+        gameScreen.classList.add(
+            "hidden"
+        );
 
-        welcomeScreen.classList.remove("hidden");
+        welcomeScreen.classList.remove(
+            "hidden"
+        );
 
-        previewCard.classList.remove("hidden");
-
-        puzzleArea.classList.add("hidden");
-
-        solvedCard.classList.add("hidden");
 
         window.scrollTo({
             top: 0,
