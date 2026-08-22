@@ -176,6 +176,14 @@ const levels = [
 
     message:
         "No grand occasion, no perfect scene… just you, being effortlessly you. ✨"
+    },
+
+    {
+    image:
+        "assets/photos/level15.jpg",
+
+    message:
+        "Nigahon mein thehra hua ek sukoon sa hai, jaise kisi khoobsurat dua ka noor sa hai… ✨❤️"
     }
 ];
 
