@@ -80,10 +80,17 @@ const levels = [
 
         message:
             "Some smiles don’t ask for attention... they simply make a moment feel softer."
+    },
+
+    {
+        image:
+            "assets/photos/level3.jpg",
+
+        message:
+            "Some smiles don't need a reason to be remembered... they simply become a reason to smile again. ❤️"
     }
 
 ];
-
 
 // ==========================================
 // GAME VARIABLES
