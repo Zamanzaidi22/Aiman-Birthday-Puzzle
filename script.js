@@ -120,6 +120,14 @@ const levels = [
 
     message:
         "Tab na duniya ki fikr thi, na waqt ka hisaab… bas ek chhoti si Aiman thi, aur uski masoom si duniya. 🥹❤️"
+    },
+
+    {
+    image:
+        "assets/photos/level8.jpg",
+
+    message:
+        "Libaas ki khoobsurti apni jagah… magar saadgi jab chehre par utar aaye, to baat hi kuch aur hoti hai. ✨❤️"
     }
 ];
 
