@@ -168,6 +168,14 @@ const levels = [
 
     message:
         "Tum yun hi muskura diya karo… kuch lamhe bina wajah bhi khoobsurat hone chahiye. ❤️✨"
+    },
+
+    {
+    image:
+        "assets/photos/level14.jpg",
+
+    message:
+        "No grand occasion, no perfect scene… just you, being effortlessly you. ✨"
     }
 ];
 
