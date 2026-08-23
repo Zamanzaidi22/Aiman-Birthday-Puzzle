@@ -59,6 +59,9 @@ const levelTitle =
 const levelProgress =
     document.querySelector(".level-progress");
 
+const piecesDisplay =
+    document.getElementById("piecesDisplay");
+
 
 // ==========================================
 // LEVEL DATA
@@ -297,6 +300,12 @@ function loadLevel() {
 
     levelProgress.textContent =
         `Memory ${currentLevel + 1} of 30`;
+
+    const gridSize =
+    getGridSize();
+
+piecesDisplay.textContent =
+    `${gridSize} × ${gridSize}`;
 
 
     previewImage.src =
