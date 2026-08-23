@@ -264,6 +264,14 @@ const levels = [
 
     message:
         "Kabhi samandar ke kinaare ek shaam yun bhi guzregi… lehron ka shor hoga, dhalta hua suraj hoga, aur saath tumhara. 🌊❤️"
+    },
+
+    {
+    image:
+        "assets/photos/level25.jpg",
+
+    message:
+        "Kashmir ki waadiyan ho, Dal Lake ka sukoon ho… aur ek Shikara ho, jisme safar humara or tumhara saath ho. 🏔️🛶❤️"
     }
 
 ];
