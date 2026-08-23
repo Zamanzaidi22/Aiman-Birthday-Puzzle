@@ -280,6 +280,14 @@ const levels = [
 
     message:
         "Ek aisi baarish bhi naseeb ho… jahan duniya se door bas sukoon ho, garam chai ho, aur saamne tum ho. ☕🌧️❤️"
+    },
+
+    {
+    image:
+        "assets/photos/level27.jpg",
+
+    message:
+        "Ek tasveer Taj Mahal ke saamne apni bhi hogi… jagah mohabbat ki hogi, aur uss lamhe mein saath Aiman Hayaati Hogi. ❤️✨"
     }
 
 ];
