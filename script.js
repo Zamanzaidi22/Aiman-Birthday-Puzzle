@@ -200,6 +200,14 @@ const levels = [
 
         message:
             "Khwahish sirf Kaaba dekhne ki nahi… ek dua ye bhi hai, kabhi yahan tum saath ho. 🕋🤍"
+    },
+
+    {
+    image:
+        "assets/photos/level17.jpg",
+
+    message:
+        "Kaaba se chale to ek dua Madina tak aa pahunchi… umeed hai ek din ye tasveer khwaab nahi, hamari haqeeqat hogi. 🤍🕌"
     }
 
 ];
