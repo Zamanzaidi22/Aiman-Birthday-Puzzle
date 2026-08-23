@@ -91,107 +91,120 @@ const levels = [
     },
 
     {
-    image:
-        "assets/photos/level4.jpg",
+        image:
+            "assets/photos/level4.jpg",
 
-    message:
-        "Pata nahi is tasveer mein kya khaas hai… bas jab bhi dekho, kuch pal ke liye nazar yahin ruk jaati hai. ❤️"
+        message:
+            "Pata nahi is tasveer mein kya khaas hai… bas jab bhi dekho, kuch pal ke liye nazar yahin ruk jaati hai. ❤️"
     },
 
     {
-    image:
-        "assets/photos/level5.jpg",
+        image:
+            "assets/photos/level5.jpg",
 
-    message:
-        "Titli to filter wali hai… 🦋 par is tasveer ki masoomiyat bilkul asli hai. ❤️"
+        message:
+            "Titli to filter wali hai… 🦋 par is tasveer ki masoomiyat bilkul asli hai. ❤️"
     },
 
     {
-    image:
-        "assets/photos/level6.jpg",
+        image:
+            "assets/photos/level6.jpg",
 
-    message:
-        "Saadgi bhi kitni khoobsurat ho sakti hai, ye tasveer har baar bata deti hai. 🤍✨"
+        message:
+            "Saadgi bhi kitni khoobsurat ho sakti hai, ye tasveer har baar bata deti hai. 🤍✨"
     },
 
     {
-    image:
-        "assets/photos/level7.jpg",
+        image:
+            "assets/photos/level7.jpg",
 
-    message:
-        "Tab na duniya ki fikr thi, na waqt ka hisaab… bas ek chhoti si Aiman thi, aur uski masoom si duniya. 🥹❤️"
+        message:
+            "Tab na duniya ki fikr thi, na waqt ka hisaab… bas ek chhoti si Aiman thi, aur uski masoom si duniya. 🥹❤️"
     },
 
     {
-    image:
-        "assets/photos/level8.jpg",
+        image:
+            "assets/photos/level8.jpg",
 
-    message:
-        "Libaas ki khoobsurti apni jagah… magar saadgi jab chehre par utar aaye, to baat hi kuch aur hoti hai. ✨❤️"
+        message:
+            "Libaas ki khoobsurti apni jagah… magar saadgi jab chehre par utar aaye, to baat hi kuch aur hoti hai. ✨❤️"
     },
 
     {
-    image:
-        "assets/photos/level9.jpg",
+        image:
+            "assets/photos/level9.jpg",
 
-    message:
-        "Laal rang pehle bhi khoobsurat tha… par tumne pehna, to thoda zyada ho gaya. ❤️😄"
+        message:
+            "Laal rang pehle bhi khoobsurat tha… par tumne pehna, to thoda zyada ho gaya. ❤️😄"
     },
 
     {
-    image:
-        "assets/photos/level10.jpg",
+        image:
+            "assets/photos/level10.jpg",
 
-    message:
-        "Some faces fade with passing years, but yours somehow grows brighter in memory. ❤️"
+        message:
+            "Some faces fade with passing years, but yours somehow grows brighter in memory. ❤️"
     },
 
     {
-    image:
-        "assets/photos/level11.jpg",
+        image:
+            "assets/photos/level11.jpg",
 
-    message:
-        "Kuch chehre bas dekhe nahi jaate… dil unhe khamoshi se yaad rakh leta hai. ❤️"
+        message:
+            "Kuch chehre bas dekhe nahi jaate… dil unhe khamoshi se yaad rakh leta hai. ❤️"
     },
 
     {
-    image:
-        "assets/photos/level12.jpg",
+        image:
+            "assets/photos/level12.jpg",
 
-    message:
-        "Wrapped in grace, touched by light… some moments look almost like a dream. ✨"
+        message:
+            "Wrapped in grace, touched by light… some moments look almost like a dream. ✨"
     },
 
     {
-    image:
-        "assets/photos/level13.jpg",
+        image:
+            "assets/photos/level13.jpg",
 
-    message:
-        "Tum yun hi muskura diya karo… kuch lamhe bina wajah bhi khoobsurat hone chahiye. ❤️✨"
+        message:
+            "Tum yun hi muskura diya karo… kuch lamhe bina wajah bhi khoobsurat hone chahiye. ❤️✨"
     },
 
     {
-    image:
-        "assets/photos/level14.jpg",
+        image:
+            "assets/photos/level14.jpg",
 
-    message:
-        "No grand occasion, no perfect scene… just you, being effortlessly you. ✨"
+        message:
+            "No grand occasion, no perfect scene… just you, being effortlessly you. ✨"
     },
 
     {
-    image:
-        "assets/photos/level15.jpg",
+        image:
+            "assets/photos/level15.jpg",
 
-    message:
-        "Nigahon mein thehra hua ek sukoon sa hai, jaise kisi khoobsurat dua ka noor sa hai… ✨❤️"
+        message:
+            "Nigahon mein thehra hua ek sukoon sa hai, jaise kisi khoobsurat dua ka noor sa hai… ✨❤️"
+    },
+
+    // ======================================
+    // LEVEL 16 — MAKKAH
+    // 4 × 4 PUZZLE STARTS FROM HERE
+    // ======================================
+
+    {
+        image:
+            "assets/photos/level16.jpg",
+
+        message:
+            "Khwahish sirf Kaaba dekhne ki nahi… ek dua ye bhi hai, kabhi yahan tum saath ho. 🕋🤍"
     }
+
 ];
+
 
 // ==========================================
 // GAME VARIABLES
 // ==========================================
-
-const totalPieces = 9;
 
 let currentLevel = 0;
 
@@ -205,6 +218,36 @@ let gameStarted = false;
 
 
 // ==========================================
+// PUZZLE DIFFICULTY
+// ==========================================
+
+function getGridSize() {
+
+    // Level 1–15 = 3 × 3
+    // Level 16 onward = 4 × 4
+
+    if (currentLevel < 15) {
+
+        return 3;
+
+    }
+
+    return 4;
+
+}
+
+
+function getTotalPieces() {
+
+    const gridSize =
+        getGridSize();
+
+    return gridSize * gridSize;
+
+}
+
+
+// ==========================================
 // START JOURNEY
 // ==========================================
 
@@ -214,9 +257,13 @@ startButton.addEventListener(
 
         currentLevel = 0;
 
-        welcomeScreen.classList.add("hidden");
+        welcomeScreen.classList.add(
+            "hidden"
+        );
 
-        gameScreen.classList.remove("hidden");
+        gameScreen.classList.remove(
+            "hidden"
+        );
 
         loadLevel();
 
@@ -240,7 +287,8 @@ function loadLevel() {
 
     moves = 0;
 
-    movesCount.textContent = "0";
+    movesCount.textContent =
+        "0";
 
 
     levelTitle.textContent =
@@ -316,9 +364,26 @@ function createPuzzle() {
 
     moves = 0;
 
-    movesCount.textContent = "0";
+    movesCount.textContent =
+        "0";
 
-    puzzleBoard.innerHTML = "";
+    puzzleBoard.innerHTML =
+        "";
+
+
+    const gridSize =
+        getGridSize();
+
+    const totalPieces =
+        getTotalPieces();
+
+
+    // Change board automatically:
+    // 3 columns for old levels
+    // 4 columns from Level 16
+
+    puzzleBoard.style.gridTemplateColumns =
+        `repeat(${gridSize}, 1fr)`;
 
 
     for (
@@ -381,10 +446,16 @@ function shufflePieces() {
 
 function renderPuzzle() {
 
-    puzzleBoard.innerHTML = "";
+    puzzleBoard.innerHTML =
+        "";
+
 
     const level =
         levels[currentLevel];
+
+
+    const gridSize =
+        getGridSize();
 
 
     pieces.forEach(
@@ -406,12 +477,14 @@ function renderPuzzle() {
 
             const row =
                 Math.floor(
-                    pieceNumber / 3
+                    pieceNumber
+                    / gridSize
                 );
 
 
             const column =
-                pieceNumber % 3;
+                pieceNumber
+                % gridSize;
 
 
             piece.style.backgroundImage =
@@ -419,11 +492,15 @@ function renderPuzzle() {
 
 
             piece.style.backgroundSize =
-                "300% 300%";
+                `${gridSize * 100}% ${gridSize * 100}%`;
+
+
+            const positionStep =
+                100 / (gridSize - 1);
 
 
             piece.style.backgroundPosition =
-                `${column * 50}% ${row * 50}%`;
+                `${column * positionStep}% ${row * positionStep}%`;
 
 
             if (
@@ -473,7 +550,8 @@ function handlePieceClick(index) {
 
     if (selectedIndex === null) {
 
-        selectedIndex = index;
+        selectedIndex =
+            index;
 
         renderPuzzle();
 
@@ -487,7 +565,8 @@ function handlePieceClick(index) {
         === index
     ) {
 
-        selectedIndex = null;
+        selectedIndex =
+            null;
 
         renderPuzzle();
 
@@ -505,9 +584,11 @@ function handlePieceClick(index) {
     ];
 
 
-    selectedIndex = null;
+    selectedIndex =
+        null;
 
     moves++;
+
 
     movesCount.textContent =
         moves;
@@ -558,9 +639,11 @@ shuffleButton.addEventListener(
     "click",
     function () {
 
-        selectedIndex = null;
+        selectedIndex =
+            null;
 
-        moves = 0;
+        moves =
+            0;
 
         movesCount.textContent =
             "0";
@@ -579,7 +662,8 @@ shuffleButton.addEventListener(
 
 function showSolvedScreen() {
 
-    gameStarted = false;
+    gameStarted =
+        false;
 
     puzzleArea.classList.add(
         "hidden"
@@ -658,9 +742,11 @@ backButton.addEventListener(
     "click",
     function () {
 
-        gameStarted = false;
+        gameStarted =
+            false;
 
-        selectedIndex = null;
+        selectedIndex =
+            null;
 
         gameScreen.classList.add(
             "hidden"
