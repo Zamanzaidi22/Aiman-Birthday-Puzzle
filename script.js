@@ -288,6 +288,14 @@ const levels = [
 
     message:
         "Ek tasveer Taj Mahal ke saamne apni bhi hogi… jagah mohabbat ki hogi, aur uss lamhe mein saath Aiman Hayaati Hogi. ❤️✨"
+    },
+
+    {
+    image:
+        "assets/photos/level28.jpg",
+
+    message:
+        "Edinburgh… tumhare sapno ki woh duniya, jiska zikr tumne kabhi mujhse kiya tha… umeed hai ek din hum is khwaab ko saath jeeyenge. 🏰❤️"
     }
 
 ];
