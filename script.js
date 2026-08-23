@@ -272,6 +272,14 @@ const levels = [
 
     message:
         "Kashmir ki waadiyan ho, Dal Lake ka sukoon ho… aur ek Shikara ho, jisme safar humara or tumhara saath ho. 🏔️🛶❤️"
+    },
+
+    {
+    image:
+        "assets/photos/level26.jpg",
+
+    message:
+        "Ek aisi baarish bhi naseeb ho… jahan duniya se door bas sukoon ho, garam chai ho, aur saamne tum ho. ☕🌧️❤️"
     }
 
 ];
