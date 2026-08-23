@@ -248,6 +248,14 @@ const levels = [
 
     message:
         "Ek khwaab ye bhi hai… kabhi zameen se thoda upar, duniya se thoda door, Cappadocia ke aasman mein tumhare saath udna hai. 🎈❤️"
+    },
+
+    {
+    image:
+        "assets/photos/level23.jpg",
+
+    message:
+        "Kabhi in pahadon ke beech yun hi nikal padenge… raaste lambe honge, baatein be-hisaab, aur lautne ki koi jaldi nahi hogi. 🤍🏔️"
     }
 
 ];
