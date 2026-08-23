@@ -208,6 +208,14 @@ const levels = [
 
     message:
         "Kaaba se chale to ek dua Madina tak aa pahunchi… umeed hai ek din ye tasveer khwaab nahi, hamari haqeeqat hogi. 🤍🕌"
+    },
+
+    {
+    image:
+        "assets/photos/level18.jpg",
+
+    message:
+        "Safar ki agli dua Jamkaran ke naam… umeed hai ek din hum yahan saath khade hokar apni adhuri duaon ko mukammal karenge. 🤍✨"
     }
 
 ];
