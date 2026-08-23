@@ -240,6 +240,14 @@ const levels = [
 
     message:
         "Kabhi in parindon ki tarah hum bhi nikal padenge… na waqt ki fikr hogi, na manzil ki—bas tum, main aur ek khoobsurat safar. 🕊️❤️"
+    },
+
+    {
+    image:
+        "assets/photos/level22.jpg",
+
+    message:
+        "Ek khwaab ye bhi hai… kabhi zameen se thoda upar, duniya se thoda door, Cappadocia ke aasman mein tumhare saath udna hai. 🎈❤️"
     }
 
 ];
