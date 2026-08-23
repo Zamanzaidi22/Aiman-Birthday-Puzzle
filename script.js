@@ -256,6 +256,14 @@ const levels = [
 
     message:
         "Kabhi in pahadon ke beech yun hi nikal padenge… raaste lambe honge, baatein be-hisaab, aur lautne ki koi jaldi nahi hogi. 🤍🏔️"
+    },
+
+    {
+    image:
+        "assets/photos/level24.jpg",
+
+    message:
+        "Kabhi samandar ke kinaare ek shaam yun bhi guzregi… lehron ka shor hoga, dhalta hua suraj hoga, aur saath tumhara. 🌊❤️"
     }
 
 ];
