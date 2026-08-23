@@ -224,6 +224,14 @@ const levels = [
 
     message:
         "Ibteda-e-Ishq meri kuch iss tarah se ho, Saath humsafar ke safar ‘Karbala’ ka ho. 🖤"
+    },
+
+    {
+    image:
+        "assets/photos/level20.jpg",
+
+    message:
+        "Istanbul ki shaam ho, tum saath ho… phir manzil kahan hai, ye poochhne ki zarurat hi kya hai. ❤️🇹🇷"
     }
 
 ];
