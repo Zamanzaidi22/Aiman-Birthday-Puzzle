@@ -232,6 +232,14 @@ const levels = [
 
     message:
         "Istanbul ki shaam ho, tum saath ho… phir manzil kahan hai, ye poochhne ki zarurat hi kya hai. ❤️🇹🇷"
+    },
+
+    {
+    image:
+        "assets/photos/level21.jpg",
+
+    message:
+        "Kabhi in parindon ki tarah hum bhi nikal padenge… na waqt ki fikr hogi, na manzil ki—bas tum, main aur ek khoobsurat safar. 🕊️❤️"
     }
 
 ];
