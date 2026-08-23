@@ -296,6 +296,14 @@ const levels = [
 
     message:
         "Edinburgh… tumhare sapno ki woh duniya, jiska zikr tumne kabhi mujhse kiya tha… umeed hai ek din hum is khwaab ko saath jeeyenge. 🏰❤️"
+    },
+
+    {
+    image:
+        "assets/photos/level29.jpg",
+
+    message:
+        "Jis jagah ke geet main aksar gaya karta hoon… tamanna hai ek din usi Darjeeling ki waadiyon mein, tumhare saath koi naya geet likhoon. ❤️✨"
     }
 
 ];
