@@ -216,6 +216,14 @@ const levels = [
 
     message:
         "Safar ki agli dua Jamkaran ke naam… umeed hai ek din hum yahan saath khade hokar apni adhuri duaon ko mukammal karenge. 🤍✨"
+    },
+
+    {
+    image:
+        "assets/photos/level19.jpg",
+
+    message:
+        "Ibteda-e-Ishq meri kuch iss tarah se ho, Saath humsafar ke safar ‘Karbala’ ka ho. 🖤"
     }
 
 ];
