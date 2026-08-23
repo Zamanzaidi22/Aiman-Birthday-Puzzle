@@ -304,6 +304,14 @@ const levels = [
 
     message:
         "Jis jagah ke geet main aksar gaya karta hoon… tamanna hai ek din usi Darjeeling ki waadiyon mein, tumhare saath koi naya geet likhoon. ❤️✨"
+    },
+
+    {
+    image:
+        "assets/photos/level30.jpg",
+
+    message:
+        "29 tasveeron tak safar tumhara tha… 30vi tasveer par bas ek khwaab mera hai— zindagi humein jahaan bhi le jaaye, kisi khoobsurat mod par hum yun hi humesha saath nazar aayein. ❤️✨"
     }
 
 ];
