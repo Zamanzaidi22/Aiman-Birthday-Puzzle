@@ -62,6 +62,11 @@ const levelProgress =
 const piecesDisplay =
     document.getElementById("piecesDisplay");
 
+const finalSurpriseScreen =
+    document.getElementById("finalSurpriseScreen");
+
+const revealGiftButton =
+    document.getElementById("revealGiftButton");
 
 // ==========================================
 // LEVEL DATA
@@ -799,22 +804,21 @@ function showSolvedScreen() {
 
 
     if (
-        currentLevel
-        === levels.length - 1
-    ) {
+    currentLevel
+    === levels.length - 1
+) {
 
-        nextLevelButton.textContent =
-            "More Memories Coming ❤️";
+    nextLevelButton.textContent =
+        "One Last Surprise 🎁";
 
-    }
+}
 
-    else {
+else {
 
-        nextLevelButton.textContent =
-            "Next Memory →";
+    nextLevelButton.textContent =
+        "Next Memory →";
 
-    }
-
+}
 
     window.scrollTo({
         top: 0,
@@ -845,9 +849,18 @@ nextLevelButton.addEventListener(
 
         else {
 
-            alert(
-                "More memories are coming soon ❤️"
+            gameScreen.classList.add(
+                "hidden"
             );
+
+            finalSurpriseScreen.classList.remove(
+                "hidden"
+            );
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
         }
 
