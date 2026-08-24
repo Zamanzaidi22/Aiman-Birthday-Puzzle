@@ -513,6 +513,8 @@ function createPuzzle() {
 
     puzzleBoard.style.gridTemplateColumns =
         `repeat(${gridSize}, 1fr)`;
+    puzzleBoard.style.gridTemplateRows =
+    `repeat(${gridSize}, 1fr)`;
 
 
     for (
