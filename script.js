@@ -68,6 +68,9 @@ const finalSurpriseScreen =
 const revealGiftButton =
     document.getElementById("revealGiftButton");
 
+const giftReveal =
+    document.getElementById("giftReveal");
+
 // ==========================================
 // LEVEL DATA
 // ==========================================
@@ -895,6 +898,37 @@ backButton.addEventListener(
             top: 0,
             behavior: "smooth"
         });
+
+    }
+);
+
+// ==========================================
+// FINAL GIFT REVEAL
+// ==========================================
+
+revealGiftButton.addEventListener(
+    "click",
+    function () {
+
+        revealGiftButton.classList.add(
+            "hidden"
+        );
+
+        giftReveal.classList.remove(
+            "hidden"
+        );
+
+        setTimeout(
+            function () {
+
+                giftReveal.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            },
+            200
+        );
 
     }
 );
