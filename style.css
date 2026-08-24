@@ -929,3 +929,109 @@ body {
     }
 
 }
+
+/* ==========================================
+   FINAL GIFT REVEAL
+========================================== */
+
+.gift-reveal {
+    width: 100%;
+    max-width: 430px;
+    margin: 35px auto 0;
+    padding: 28px 18px;
+
+    border: 1px solid rgba(241, 200, 107, 0.35);
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.06),
+            rgba(255, 255, 255, 0.02)
+        );
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.35);
+
+    animation:
+        giftRevealAnimation 0.8s ease;
+}
+
+.gift-reveal.hidden {
+    display: none;
+}
+
+@keyframes giftRevealAnimation {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.gift-small-title {
+    margin: 0 0 8px;
+
+    font-size: 11px;
+    letter-spacing: 2.5px;
+
+    color: #d9a84e;
+}
+
+.gift-title {
+    margin: 0 0 22px;
+
+    font-size: 27px;
+
+    color: #f1c86b;
+}
+
+.gift-gallery {
+    width: 100%;
+}
+
+.gift-main-image {
+    display: block;
+
+    width: 100%;
+    max-height: 390px;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+}
+
+.gift-thumbnails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.gift-thumbnails img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+}
+
+.gift-message {
+    margin: 25px 5px 0;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #ead7cb;
+}
