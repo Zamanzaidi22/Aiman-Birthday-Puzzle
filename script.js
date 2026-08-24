@@ -378,7 +378,7 @@ startButton.addEventListener(
     "click",
     function () {
 
-        currentLevel = 29;
+        currentLevel = 0;
 
         welcomeScreen.classList.add(
             "hidden"
