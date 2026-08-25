@@ -1086,3 +1086,81 @@ body {
     transition:
         width 0.8s ease;
 }
+
+/* ==========================================
+   PREMIUM CINEMATIC PHOTO PREVIEW
+========================================== */
+
+.preview-card:not(.hidden) {
+    animation:
+        previewCardReveal 0.7s ease both;
+}
+
+.preview-card:not(.hidden) .preview-image {
+    animation:
+        cinematicPhoto 3s ease-out both;
+}
+
+.preview-label {
+    animation:
+        previewTextReveal 0.8s ease 0.15s both;
+}
+
+.preview-hint {
+    animation:
+        previewTextReveal 0.8s ease 0.35s both;
+}
+
+
+/* Card softly appears */
+
+@keyframes previewCardReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Photo gets subtle cinematic zoom */
+
+@keyframes cinematicPhoto {
+
+    0% {
+        opacity: 0;
+        transform: scale(1.035);
+        filter: brightness(0.82);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+
+/* Preview text softly enters */
+
+@keyframes previewTextReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
