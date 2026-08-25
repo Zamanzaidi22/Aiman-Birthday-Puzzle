@@ -59,6 +59,9 @@ const levelTitle =
 const levelProgress =
     document.querySelector(".level-progress");
 
+const journeyProgressFill =
+    document.getElementById("journeyProgressFill");
+
 const piecesDisplay =
     document.getElementById("piecesDisplay");
 
@@ -420,6 +423,12 @@ function loadLevel() {
 
     levelProgress.textContent =
         `Memory ${currentLevel + 1} of 30`;
+
+    const progressPercentage =
+    ((currentLevel + 1) / 30) * 100;
+
+journeyProgressFill.style.width =
+    `${progressPercentage}%`;
 
     const gridSize =
     getGridSize();
