@@ -80,6 +80,11 @@ const birthdaySong =
 const ambientMusic =
     document.getElementById("ambientMusic");
 
+const musicToggle =
+    document.getElementById("musicToggle");
+
+let musicMuted = false;
+
 // ==========================================
 // MUSIC TRANSITION
 // Birthday Song → Ambient Music
@@ -103,6 +108,65 @@ birthdaySong.addEventListener(
     }
 );
 
+// ==========================================
+// MUSIC ON / OFF CONTROL
+// ==========================================
+
+function updateMusicButton() {
+
+    if (musicMuted) {
+
+        musicToggle.textContent = "🔇";
+
+        musicToggle.classList.add(
+            "music-muted"
+        );
+
+        musicToggle.classList.remove(
+            "music-playing"
+        );
+
+    } else {
+
+        musicToggle.textContent = "♫";
+
+        musicToggle.classList.remove(
+            "music-muted"
+        );
+
+        if (
+            !birthdaySong.paused ||
+            !ambientMusic.paused
+        ) {
+
+            musicToggle.classList.add(
+                "music-playing"
+            );
+
+        }
+
+    }
+
+}
+
+
+musicToggle.addEventListener(
+    "click",
+    function () {
+
+        musicMuted =
+            !musicMuted;
+
+        birthdaySong.muted =
+            musicMuted;
+
+        ambientMusic.muted =
+            musicMuted;
+
+        updateMusicButton();
+
+    }
+);
 // ==========================================
 // LEVEL DATA
 // ==========================================
@@ -422,6 +486,7 @@ birthdaySong.play().catch(
         );
     }
 );
+        updateMusicButton();
 
         welcomeScreen.classList.add(
             "hidden"
@@ -943,6 +1008,12 @@ birthdaySong.currentTime = 0;
         ambientMusic.pause();
 
 ambientMusic.currentTime = 0;
+        musicMuted = false;
+
+birthdaySong.muted = false;
+ambientMusic.muted = false;
+
+updateMusicButton();
 
         gameScreen.classList.add(
             "hidden"
