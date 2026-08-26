@@ -1309,3 +1309,128 @@ body {
         filter: brightness(1);
     }
 }
+
+/* ==========================================
+   PREMIUM PUZZLE INTERACTION
+========================================== */
+
+/* Board gets a soft premium glow */
+
+.puzzle-board {
+    position: relative;
+
+    box-shadow:
+        0 18px 55px rgba(0, 0, 0, 0.45),
+        0 0 22px rgba(215, 155, 64, 0.08);
+}
+
+
+/* Every tile gets smoother interaction */
+
+.puzzle-piece {
+    will-change: transform, box-shadow;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.22s ease,
+        filter 0.22s ease,
+        opacity 0.18s ease;
+}
+
+
+/* Small tap feedback */
+
+.puzzle-piece:active {
+    transform: scale(0.94);
+    filter: brightness(0.92);
+}
+
+
+/* Premium selected tile */
+
+.puzzle-piece.selected {
+    z-index: 10;
+
+    outline:
+        2px solid #ffd77f;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 215, 127, 0.16),
+        0 0 15px rgba(255, 193, 85, 0.55),
+        0 0 28px rgba(255, 193, 85, 0.20);
+
+    transform:
+        scale(0.95)
+        translateY(-1px);
+
+    filter:
+        brightness(1.08)
+        saturate(1.05);
+}
+
+
+/* Puzzle board softly enters */
+
+.puzzle-area:not(.hidden) .puzzle-board {
+    animation:
+        puzzleBoardReveal 0.55s ease both;
+}
+
+
+@keyframes puzzleBoardReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Stats enter smoothly */
+
+.puzzle-area:not(.hidden) .game-stats {
+    animation:
+        puzzleStatsReveal 0.5s ease 0.08s both;
+}
+
+
+@keyframes puzzleStatsReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Instruction and shuffle button */
+
+.puzzle-area:not(.hidden) .puzzle-instruction,
+.puzzle-area:not(.hidden) .secondary-button {
+    animation:
+        puzzleControlReveal 0.5s ease 0.18s both;
+}
+
+
+@keyframes puzzleControlReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
