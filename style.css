@@ -1434,3 +1434,219 @@ body {
         transform: translateY(0);
     }
 }
+
+/* ==========================================
+   PREMIUM ROYAL OPENING
+========================================== */
+
+/* Slow atmospheric background */
+
+.welcome-screen {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+/* Soft moving glow behind everything */
+
+.welcome-screen::before,
+.welcome-screen::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(70px);
+
+    opacity: 0.12;
+
+    z-index: -1;
+}
+
+
+.welcome-screen::before {
+    top: -80px;
+    left: -100px;
+
+    background: #e7ad55;
+
+    animation:
+        royalGlowOne 8s ease-in-out infinite alternate;
+}
+
+
+.welcome-screen::after {
+    right: -110px;
+    bottom: -70px;
+
+    background: #b92d59;
+
+    animation:
+        royalGlowTwo 9s ease-in-out infinite alternate;
+}
+
+
+/* Opening elements */
+
+.welcome-screen .heart {
+    animation:
+        openingHeart 0.8s ease both,
+        heartbeat 1.5s 0.8s infinite;
+}
+
+
+.welcome-screen .small-title {
+    animation:
+        openingFade 0.7s ease 0.15s both;
+}
+
+
+.welcome-screen h1 {
+    animation:
+        openingTitle 0.9s ease 0.25s both;
+}
+
+
+.welcome-screen .birthday-date {
+    animation:
+        openingFade 0.7s ease 0.40s both;
+}
+
+
+.welcome-screen .journey-count {
+    animation:
+        openingFade 0.7s ease 0.52s both;
+}
+
+
+.welcome-screen .divider {
+    animation:
+        openingFade 0.7s ease 0.62s both;
+}
+
+
+.welcome-screen .journey-text {
+    animation:
+        openingFade 0.7s ease 0.72s both;
+}
+
+
+.welcome-screen .start-button {
+    animation:
+        openingButton 0.8s ease 0.82s both;
+}
+
+
+.welcome-screen .made-with {
+    animation:
+        openingFade 0.7s ease 0.95s both;
+}
+
+
+/* ==========================================
+   OPENING ANIMATIONS
+========================================== */
+
+@keyframes openingHeart {
+
+    from {
+        opacity: 0;
+        transform: scale(0.45);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes openingTitle {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(14px)
+            scale(0.97);
+
+        letter-spacing: 2px;
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        letter-spacing: normal;
+    }
+}
+
+
+@keyframes openingFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes openingButton {
+
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+@keyframes royalGlowOne {
+
+    from {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate(55px, 55px)
+            scale(1.18);
+    }
+}
+
+
+@keyframes royalGlowTwo {
+
+    from {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate(-50px, -55px)
+            scale(1.15);
+    }
+}
