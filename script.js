@@ -77,6 +77,32 @@ const giftReveal =
 const birthdaySong =
     document.getElementById("birthdaySong");
 
+const ambientMusic =
+    document.getElementById("ambientMusic");
+
+// ==========================================
+// MUSIC TRANSITION
+// Birthday Song → Ambient Music
+// ==========================================
+
+birthdaySong.addEventListener(
+    "ended",
+    function () {
+
+        ambientMusic.currentTime = 0;
+        ambientMusic.volume = 0.28;
+
+        ambientMusic.play().catch(
+            function () {
+                console.log(
+                    "Ambient playback was blocked."
+                );
+            }
+        );
+
+    }
+);
+
 // ==========================================
 // LEVEL DATA
 // ==========================================
@@ -913,6 +939,10 @@ backButton.addEventListener(
         birthdaySong.pause();
 
 birthdaySong.currentTime = 0;
+
+        ambientMusic.pause();
+
+ambientMusic.currentTime = 0;
 
         gameScreen.classList.add(
             "hidden"
