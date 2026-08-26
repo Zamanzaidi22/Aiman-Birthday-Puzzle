@@ -1675,3 +1675,76 @@ body {
 
     letter-spacing: 0.3px;
 }
+
+/* ==========================================
+   PREMIUM MUSIC CONTROL
+========================================== */
+
+.music-toggle {
+    position: fixed;
+
+    right: 18px;
+    bottom: 18px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255, 217, 138, 0.42);
+
+    background:
+        rgba(35, 9, 17, 0.88);
+
+    color: #ffd98a;
+
+    font-family: inherit;
+    font-size: 21px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.38),
+        0 0 18px rgba(255, 196, 89, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+/* Tap feedback */
+
+.music-toggle:active {
+    transform: scale(0.90);
+}
+
+
+/* Gentle glow while music is active */
+
+.music-toggle.music-playing {
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.38),
+        0 0 12px rgba(255, 211, 125, 0.28),
+        0 0 25px rgba(255, 183, 70, 0.12);
+}
+
+
+/* Muted appearance */
+
+.music-toggle.music-muted {
+    opacity: 0.68;
+    color: #bca6aa;
+}
