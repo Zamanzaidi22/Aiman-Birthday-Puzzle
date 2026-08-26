@@ -74,6 +74,9 @@ const revealGiftButton =
 const giftReveal =
     document.getElementById("giftReveal");
 
+const birthdaySong =
+    document.getElementById("birthdaySong");
+
 // ==========================================
 // LEVEL DATA
 // ==========================================
@@ -382,6 +385,17 @@ startButton.addEventListener(
     function () {
 
         currentLevel = 0;
+        birthdaySong.currentTime = 0;
+
+birthdaySong.volume = 0.55;
+
+birthdaySong.play().catch(
+    function () {
+        console.log(
+            "Audio playback was blocked."
+        );
+    }
+);
 
         welcomeScreen.classList.add(
             "hidden"
@@ -895,6 +909,10 @@ backButton.addEventListener(
 
         selectedIndex =
             null;
+
+        birthdaySong.pause();
+
+birthdaySong.currentTime = 0;
 
         gameScreen.classList.add(
             "hidden"
