@@ -1650,3 +1650,28 @@ body {
             scale(1.15);
     }
 }
+
+/* ==========================================
+   OPENING FINAL POLISH
+========================================== */
+
+/* Softer premium heart glow */
+
+.welcome-screen .heart {
+    text-shadow:
+        0 0 12px rgba(255, 79, 121, 0.35),
+        0 0 28px rgba(255, 79, 121, 0.16);
+
+    filter:
+        drop-shadow(0 0 10px rgba(255, 79, 121, 0.25));
+}
+
+
+/* Signature should be visible but subtle */
+
+.welcome-screen .made-with {
+    color: #9f858c;
+    opacity: 0.82;
+
+    letter-spacing: 0.3px;
+}
