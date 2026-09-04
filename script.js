@@ -512,35 +512,49 @@ startButton.addEventListener(
     function () {
 
         currentLevel = 0;
-        localStorage.removeItem(SAVE_KEY);
-updateContinueButton();
+
         birthdaySong.currentTime = 0;
+        birthdaySong.volume = 0.55;
 
-birthdaySong.volume = 0.55;
-
-birthdaySong.play().catch(
-    function () {
-        console.log(
-            "Audio playback was blocked."
+        birthdaySong.play().catch(
+            function () {
+                console.log(
+                    "Audio playback was blocked."
+                );
+            }
         );
+
+        updateMusicButton();
+
+        welcomeScreen.classList.add(
+            "hidden"
+        );
+
+        gameScreen.classList.remove(
+            "hidden"
+        );
+
+        loadLevel();
+
     }
 );
-        continueButton.addEventListener("click", () => {
 
-    const savedLevel = getSavedLevel();
 
-    if (savedLevel === null) {
-        return;
-    }
+// ==========================================
+// CONTINUE JOURNEY
+// ==========================================
 
-    currentLevel = savedLevel;
+continueButton.addEventListener(
+    "click",
+    function () {
 
-    welcomeScreen.classList.add("hidden");
-    gameScreen.classList.remove("hidden");
+        const savedLevel = getSavedLevel();
 
-    loadLevel();
-});
-        updateMusicButton();
+        if (savedLevel === null) {
+            return;
+        }
+
+        currentLevel = savedLevel;
 
         welcomeScreen.classList.add(
             "hidden"
