@@ -512,6 +512,8 @@ startButton.addEventListener(
     function () {
 
         currentLevel = 0;
+        localStorage.removeItem(SAVE_KEY);
+updateContinueButton();
         birthdaySong.currentTime = 0;
 
 birthdaySong.volume = 0.55;
