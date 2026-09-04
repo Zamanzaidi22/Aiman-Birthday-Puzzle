@@ -1100,3 +1100,5 @@ revealGiftButton.addEventListener(
 
     }
 );
+
+updateContinueButton();
