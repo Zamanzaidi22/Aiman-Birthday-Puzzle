@@ -430,6 +430,40 @@ const levels = [
 
 let currentLevel = 0;
 
+// ==========================================
+// SAVE PROGRESS
+// ==========================================
+
+const SAVE_KEY = "aimanBirthdayPuzzleProgress";
+
+function getSavedLevel() {
+    const savedLevel = localStorage.getItem(SAVE_KEY);
+
+    if (savedLevel === null) {
+        return null;
+    }
+
+    const level = parseInt(savedLevel, 10);
+
+    if (isNaN(level) || level <= 0 || level >= levels.length) {
+        return null;
+    }
+
+    return level;
+}
+
+function updateContinueButton() {
+    const savedLevel = getSavedLevel();
+
+    if (savedLevel !== null) {
+        continueButton.classList.remove("hidden");
+        continueButton.textContent =
+            `Continue From Memory ${savedLevel + 1} →`;
+    } else {
+        continueButton.classList.add("hidden");
+    }
+}
+
 let pieces = [];
 
 let selectedIndex = null;
