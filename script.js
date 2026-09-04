@@ -555,18 +555,44 @@ continueButton.addEventListener(
         }
 
         currentLevel = savedLevel;
+
+        // Birthday song should not restart
+        birthdaySong.pause();
+        birthdaySong.currentTime = 0;
+
+        // Reset music state
+        musicMuted = false;
+
+        birthdaySong.muted = false;
+        ambientMusic.muted = false;
+
+        // Start ambient music
+        ambientMusic.pause();
         ambientMusic.currentTime = 0;
-ambientMusic.volume = 0.30;
+        ambientMusic.volume = 0.28;
+        ambientMusic.loop = true;
 
-ambientMusic.play().catch(
-    function () {
-        console.log(
-            "Ambient audio playback was blocked."
-        );
-    }
-);
+        const playPromise =
+            ambientMusic.play();
 
-updateMusicButton();
+        if (playPromise !== undefined) {
+
+            playPromise
+                .then(function () {
+
+                    updateMusicButton();
+
+                })
+                .catch(function (error) {
+
+                    console.log(
+                        "Ambient playback failed:",
+                        error
+                    );
+
+                });
+
+        }
 
         welcomeScreen.classList.add(
             "hidden"
