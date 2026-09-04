@@ -944,6 +944,7 @@ shuffleButton.addEventListener(
 
 function showSolvedScreen() {
 
+    localStorage.setItem(SAVE_KEY, currentLevel + 1);
     gameStarted =
         false;
 
