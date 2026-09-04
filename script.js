@@ -555,6 +555,18 @@ continueButton.addEventListener(
         }
 
         currentLevel = savedLevel;
+        ambientMusic.currentTime = 0;
+ambientMusic.volume = 0.30;
+
+ambientMusic.play().catch(
+    function () {
+        console.log(
+            "Ambient audio playback was blocked."
+        );
+    }
+);
+
+updateMusicButton();
 
         welcomeScreen.classList.add(
             "hidden"
