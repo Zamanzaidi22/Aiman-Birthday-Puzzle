@@ -523,6 +523,21 @@ birthdaySong.play().catch(
         );
     }
 );
+        continueButton.addEventListener("click", () => {
+
+    const savedLevel = getSavedLevel();
+
+    if (savedLevel === null) {
+        return;
+    }
+
+    currentLevel = savedLevel;
+
+    welcomeScreen.classList.add("hidden");
+    gameScreen.classList.remove("hidden");
+
+    loadLevel();
+});
         updateMusicButton();
 
         welcomeScreen.classList.add(
