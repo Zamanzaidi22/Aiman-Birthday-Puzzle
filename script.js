@@ -17,6 +17,9 @@ const gameScreen =
 const startButton =
     document.getElementById("startButton");
 
+const continueButton = 
+    document.getElementById("continueButton");
+
 const backButton =
     document.getElementById("backButton");
 
