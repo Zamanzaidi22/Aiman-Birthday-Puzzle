@@ -1169,5 +1169,5 @@ revealGiftButton.addEventListener(
 
     }
 );
-localStorage.setItem(SAVE_KEY, 15);
+
 updateContinueButton();
